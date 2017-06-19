@@ -168,6 +168,8 @@ on boot
 
     # Create the directories used by the Wireless subsystem
     mkdir /data/vendor/wifi 0770 wifi wifi
+    mkdir /data/vendor/wifi/sockets 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa_supplicant 0770 wifi wifi
 
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
