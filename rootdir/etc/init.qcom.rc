@@ -341,6 +341,7 @@ service rmt_storage /system/vendor/bin/rmt_storage
     user root
     group system wakelock
     writepid /dev/cpuset/system-background/tasks
+    shutdown critical
 
 service cnd /system/vendor/bin/cnd
     class late_start
