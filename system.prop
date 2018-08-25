@@ -30,7 +30,7 @@ av.streaming.offload.enable=false
 
 # Bluetooth
 bluetooth.hfp.client=1
-qcom.bluetooth.soc=smd
+vendor.qcom.bluetooth.soc=pronto
 ro.bluetooth.dun=true
 ro.bluetooth.hfp.ver=1.7
 ro.bluetooth.sap=true
