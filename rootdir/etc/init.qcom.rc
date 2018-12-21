@@ -341,7 +341,7 @@ service ril-daemon1 /system/vendor/bin/hw/rild -c 2
 service charger /charger
     class charger
     group system graphics
-    seclabel u:r:charger:s0
+    seclabel u:r:healthd:s0
 
 service vm_bms /system/vendor/bin/vm_bms
     class main
