@@ -118,6 +118,9 @@ TARGET_QCOM_NO_FM_FIRMWARE := true
 # GPS
 USE_DEVICE_SPECIFIC_GPS := true
 
+# HIDL
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/hidl/manifest.xml
+
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_ido
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
