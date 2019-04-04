@@ -1,6 +1,15 @@
 # Art
 dalvik.vm.dex2oat-flags=--no-watch-dog
 
+# ACDB
+persist.audio.calfile0=/system/vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb
+persist.audio.calfile1=/system/vendor/etc/acdbdata/QRD/QRD_General_cal.acdb
+persist.audio.calfile2=/system/vendor/etc/acdbdata/QRD/QRD_Global_cal.acdb
+persist.audio.calfile3=/system/vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb
+persist.audio.calfile4=/system/vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb
+persist.audio.calfile5=/system/vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb
+persist.audio.calfile6=/system/vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb
+
 # Audio
 af.fast_track_multiplier=1
 vendor.audio_hal.period_size=192
