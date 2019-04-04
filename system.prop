@@ -64,6 +64,9 @@ vidc.enc.narrow.searchrange=1
 # Factory reset protection
 ro.frp.pst=/dev/block/platform/soc.0/7824900.sdhci/by-name/config
 
+# First api level
+ro.product.first_api_level=22
+
 # Media
 media.msm8939hw=1
 mm.enable.smoothstreaming=true
