@@ -173,7 +173,7 @@ TARGET_RIL_VARIANT := caf
 # SELinux
 include device/qcom/sepolicy-legacy/sepolicy.mk
 
-BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += device/xiaomi/ido/sepolicy
 
 # Shim
 TARGET_LD_SHIM_LIBS := \
