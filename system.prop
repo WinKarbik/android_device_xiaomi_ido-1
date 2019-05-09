@@ -54,6 +54,7 @@ persist.cne.feature=1
 # Display
 debug.sf.hw=0
 debug.egl.hw=0
+debug.hwui.profile=true
 persist.hwc.mdpcomp.enable=true
 debug.mdpcomp.logs=0
 debug.composition.type=c2d
