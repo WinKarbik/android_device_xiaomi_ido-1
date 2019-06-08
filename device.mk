@@ -161,11 +161,8 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    fingerprint.msm8916 \
-    android.hardware.biometrics.fingerprint@2.1-service
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/android.hardware.biometrics.fingerprint@2.1-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
+    android.hardware.biometrics.fingerprint@2.0-service.ido \
+    fingerprint.msm8916
 
 # FM
 PRODUCT_PACKAGES += \
