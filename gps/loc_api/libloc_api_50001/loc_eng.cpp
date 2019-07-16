@@ -77,11 +77,11 @@
 #define FAILURE FALSE
 
 #ifndef GPS_CONF_FILE
-#define GPS_CONF_FILE            "/etc/gps.conf"   //??? platform independent
+#define GPS_CONF_FILE            "/vendor/etc/gps.conf"   //??? platform independent
 #endif
 
 #ifndef SAP_CONF_FILE
-#define SAP_CONF_FILE            "/etc/sap.conf"
+#define SAP_CONF_FILE            "/vendor/etc/sap.conf"
 #endif
 
 #define XTRA1_GPSONEXTRA         "xtra1.gpsonextra.net"
@@ -3017,7 +3017,7 @@ static int set_sched_policy(int tid, SchedPolicy policy)
 FUNCTION    loc_eng_read_config
 
 DESCRIPTION
-   Initiates the reading of the gps config file stored in /etc dir
+   Initiates the reading of the gps config file stored in /vendor/etc dir
 
 DEPENDENCIES
    None
