@@ -1,0 +1,2 @@
+allow init proc:file read;
+allow init sysfs:file setattr;

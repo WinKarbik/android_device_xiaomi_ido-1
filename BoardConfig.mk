@@ -179,6 +179,11 @@ include device/qcom/sepolicy-legacy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/xiaomi/ido/sepolicy
 
 # Shim
+TARGET_LD_SHIM_LIBS := \
+    /system/vendor/lib/libmmcamera2_imglib_modules.so|libshim_camera.so \
+    /system/vendor/lib64/libizat_core.so|libshims_get_process_name.so
+
+# Shim
 #TARGET_LD_SHIM_LIBS := \
 #    /system/bin/mm-qcamera-daemon|libshim_camera.so \
 #    /system/vendor/lib/libmmcamera2_imglib_modules.so|libshim_camera.so \
