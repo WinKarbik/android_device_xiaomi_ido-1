@@ -1,0 +1,7 @@
+ # Biometric
+/system/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.0-service\.ido u:object_r:hal_fingerprint_default_exec:s0
+
+# Fpc Fingerprint
+/data/fpc(/.*)?					u:object_r:fpc_data_file:s0
+/dev/socket/fpce(/.*)?				u:object_r:fpce_socket:s0
+/sys/devices/soc/soc:fpc1020(/.*)?		u:object_r:fpc_sysfs:s0
