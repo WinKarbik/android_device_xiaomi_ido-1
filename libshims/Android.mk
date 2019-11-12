@@ -5,10 +5,11 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := \
     atomic.cpp \
     android/sensor.cpp \
-    gui/SensorManager.cpp
+    gui/SensorManager.cpp \
+    android/looper.cpp
 
 LOCAL_C_INCLUDES := gui
-LOCAL_SHARED_LIBRARIES := libgui libutils liblog libsensor libbinder libandroid
+LOCAL_SHARED_LIBRARIES := libutils liblog libbinder libsensor_vendor
 LOCAL_MODULE := libshim_camera
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_VENDOR_MODULE := true

@@ -42,6 +42,7 @@ TARGET_NO_BOOTLOADER := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=none androidboot.hardware=qcom ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_OFFSET := 0x02000000
@@ -110,8 +111,10 @@ TARGET_HW_DISK_ENCRYPTION := true
 
 # Filesystem
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+TARGET_COPY_OUT_VENDOR := vendor
 TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
 
 # FM
@@ -146,6 +149,7 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 274726912
 BOARD_PERSISTIMAGE_PARTITION_SIZE := 33554432
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2415919104
+BOARD_VENDORIMAGE_PARTITION_SIZE := 536870912
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12066978816 # (12066995200-16384)
 BOARD_FLASH_BLOCK_SIZE := 131072 # blockdev --getbsz /dev/block/mmcblk0p19
 
@@ -156,7 +160,7 @@ TARGET_HAS_NO_WLAN_STATS := true
 TARGET_USES_INTERACTION_BOOST := true
 
 # Properties
-TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
+#TARGET_VENDOR_PROP += $(LOCAL_PATH)/system.prop
 
 # Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
@@ -180,16 +184,19 @@ BOARD_SEPOLICY_DIRS += device/xiaomi/ido/sepolicy
 
 # Shim
 TARGET_LD_SHIM_LIBS := \
-    /system/vendor/lib/libmmcamera2_imglib_modules.so|libshim_camera.so \
-    /system/vendor/lib64/libizat_core.so|libshims_get_process_name.so
+    /vendor/lib/libmmcamera2_imglib_modules.so|libshim_camera.so \
+    /vendor/lib64/libizat_core.so|libshims_get_process_name.so
 
-# Shim
-#TARGET_LD_SHIM_LIBS := \
-#    /system/bin/mm-qcamera-daemon|libshim_camera.so \
-#    /system/vendor/lib/libmmcamera2_imglib_modules.so|libshim_camera.so \
-#    /system/vendor/lib/libmmcamera2_stats_modules.so|libshim_camera.so \
-#    /system/vendor/lib/libmmqjpeg_codec.so|libboringssl-compat.so \
-#    /system/vendor/lib64/libizat_core.so|libshims_get_process_name.so
+# Treble
+PRODUCT_VENDOR_MOVE_ENABLED := true
+BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
+PRODUCT_FULL_TREBLE_OVERRIDE := true
+BOARD_VNDK_RUNTIME_DISABLE := true
+BOARD_USES_VENDORIMAGE := true
+PRODUCT_SHIPPING_API_LEVEL := 22
+
+# VNDK
+BOARD_VNDK_VERSION := current
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
@@ -205,7 +212,6 @@ WIFI_DRIVER_FW_PATH_STA          := "sta"
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
 
 TARGET_DISABLE_WCNSS_CONFIG_COPY := true
-PRODUCT_VENDOR_MOVE_ENABLED := true
 
 # inherit from the proprietary version
 -include vendor/xiaomi/ido/BoardConfigVendor.mk

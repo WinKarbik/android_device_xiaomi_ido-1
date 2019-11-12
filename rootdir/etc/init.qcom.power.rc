@@ -73,6 +73,7 @@ on enable-low-power
     write /dev/cpuset/system-background/cpus 4-6
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/camera-daemon/cpus 4-7
+    write /dev/cpuset/restricted/cpus 4-7
 
     # Enable low power modes
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
@@ -104,6 +105,8 @@ on enable-low-power
 
     # Enable dynamic clock gating
     write /sys/module/lpm_levels/lpm_workarounds/dynamic_clock_gating 1
+
+    setprop vendor.post_boot.parsed 1
 
     rm /data/system/perfd/default_values
     start perfd
